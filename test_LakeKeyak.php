@@ -1,5 +1,5 @@
 <?
-include "kejakv2.php";
+include "keyakv2.php";
 /*
 LakeKeyak can absorb up to 192 bytes of metadata per call to f 
 or up to 168 of plaintext, with additionally 24 bytes of metadata
