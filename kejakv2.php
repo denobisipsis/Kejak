@@ -21,13 +21,13 @@ class stringStream
 	Concretely, a byte stream is a string of bytes that supports the following functions,
 	similarly to a queue:
 	
-	• z ? X.Pullbyte() removes the first byte of stream X and assigns it to z;
-	• X.Pushbyte(z) appends byte z to the end of the stream X;
-	• X.HasMore returns a Boolean value that indicates whether stream is empty (False)
+	â€¢ z ? X.Pullbyte() removes the first byte of stream X and assigns it to z;
+	â€¢ X.Pushbyte(z) appends byte z to the end of the stream X;
+	â€¢ X.HasMore returns a Boolean value that indicates whether stream is empty (False)
 	or not (True);
-	• (X = Y) returns a Boolean value that is True iff streams X and Y have the same
+	â€¢ (X = Y) returns a Boolean value that is True iff streams X and Y have the same
 	content;
-	• X.Clear(): removes all bytes from stream X.
+	â€¢ X.Clear(): removes all bytes from stream X.
 	At some places we speak of input byte streams and output byte streams. An input byte
 	stream does not have to support Pushbyte(z) and an output byte stream does not have
 	to support Pullbyte().
@@ -313,7 +313,7 @@ correct value
 	byte stream T, to be used as a tag or chaining value
 	*/
         if ($length > $this->squeezing_byte_rate)
-            die("Excesivo tamaño del Tag");
+            die("Excesivo tamaÃ±o del Tag");
 	    
         for ($i=0;$i<$length;$i++)
 		$T->Pushbyte($this->State->s[$i]);
@@ -495,13 +495,13 @@ a multiple of W, allowing data to be manipulated in multi-byte chunks. The remai
 parameters determine the security strength: the capacity c and the tag length t. From
 these, the Motorist object derives the following quantities:
 
-• the squeezing byte rate Rs
+â€¢ the squeezing byte rate Rs
 , the largest multiple of W such that at least max(c, 32)
 bits (for the inner part and for the fragment offsets) of the state are never used as
 output;
-• the absorbing byte rate Ra, the largest multiple of W that reserves at least 32 bits at
+â€¢ the absorbing byte rate Ra, the largest multiple of W that reserves at least 32 bits at
 the end of the state for absorbing the fragment offsets;
-• the chaining value length c
+â€¢ the chaining value length c
 '
 , the smallest multiple of W greater than or equal to the
 capacity c.
@@ -596,7 +596,7 @@ capacity c.
     	{
 	/*
 	retrieves a c'-bit chaining values from each Piston object, 
-	concatenates these to make a ? × c'-bit string
+	concatenates these to make a ? Ã— c'-bit string
 	and collectively injects it into all Piston objects. 
 	For ? > 1, this makes the state of all
 	Piston objects depend on each other. 
@@ -679,7 +679,7 @@ class Keyak
     function _keypack($K, $l)
     	{
         if ((strlen($K) + 2) > $l)
-            die("La clave debe ser < $l");
+            die("La clave debe ser < ".($l-2);
 
         $result = chr($l).$K."\x01";
 	    
