@@ -679,7 +679,7 @@ class Keyak
     function _keypack($K, $l)
     	{
         if ((strlen($K) + 2) > $l)
-            die("La clave debe ser < ".($l-2);
+            die("La clave debe ser < ".($l-2));
 
         $result = chr($l).$K."\x01";
 	    
